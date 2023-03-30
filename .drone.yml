@@ -13,7 +13,7 @@ steps:
   image: docker:dind
   volumes:
   - name: dockersock
-    path: /var/run
+    path: /var/run/
   commands:
   - sleep 5 # give docker enough time to start
   - docker ps -a
