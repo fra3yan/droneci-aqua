@@ -10,7 +10,7 @@ steps:
   - echo world
   
 - name: scanner
-  image: docker:dind
+  image: plugins/docker
   privileged: true
   volumes:
   - name: dockersock
