@@ -8,3 +8,13 @@ steps:
   commands:
   - echo hello
   - echo world
+  
+- name: scanner
+  image: docker:dind
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+  - docker login registry.aquasec.com -u anggi.fp@netpoleons.com -p P@ssw0rd.alto
+  - docker pull registry.aquasec.com/scanner:2022.4
+  - docker run --rm -v /tmp:/tmp aquasec/scanner:2022.4 --registry "Docker Hub" -image nginx:latest --host https://a23a3e4b89.cloud.aquasec.com/ --token 6f26ecbec88d8c45a244dd999a62f8c9440fad5b  --show-negligible --htmlfile out.html --jsonfile out.json > /dev/null
