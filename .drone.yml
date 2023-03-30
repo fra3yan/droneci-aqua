@@ -15,7 +15,7 @@ steps:
   - name: dockersock
     path: /var/run
   commands:
-   - sleep 5 # give docker enough time to start
+  - sleep 5 # give docker enough time to start
   - docker ps -a
   - docker login registry.aquasec.com -u anggi.fp@netpoleons.com -p P@ssw0rd.alto
   - docker pull registry.aquasec.com/scanner:2022.4
