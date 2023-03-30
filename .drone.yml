@@ -1,13 +1,10 @@
 kind: pipeline
 type: docker
-name: en
+name: default
 
 steps:
 - name: greeting
   image: alpine
   commands:
-  - echo hello world
-
-trigger:
-  event:
-  - push
+  - echo hello
+  - echo world
