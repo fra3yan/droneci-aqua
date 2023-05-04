@@ -17,7 +17,7 @@ where
 when using local image, use parameter  --local imageName:tag
 example
 ```
-docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $aquaGW  -A $aquaToken  --registry "$regDomain"  --local imageName:tag
+docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $aquaGW  -A $aquaToken  --local imageName:tag
 ```
 
 For security purpose please use secret in drone UI.
