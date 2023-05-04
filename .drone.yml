@@ -12,7 +12,7 @@ steps:
   - docker ps -a
   - echo $${regPass} | docker login --username $${regUser} --password-stdin registry.aquasec.com
   - docker pull registry.aquasec.com/scanner:2022.4
-  - docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $${aquaGW}  -A $${aquaToken} --registry "docker" nginx:latest
+  - docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $${aquaGW}  -A $${aquaToken} --registry "registry-1.docker.io" nginx:latest
   environment:
     regUser:
       from_secret: regUser
