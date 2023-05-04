@@ -35,5 +35,5 @@ example parameter for get secret variable
       from_secret: aquaToken
 ```
 
-full documentation please refer to offcial aqua docs 
-[https://support.aquasec.com/support/solutions/articles/16000120206-scanner-command-line-interface]: aquasec.com
+full documentation please refer to offcial aqua docs
+[https://link-url-here.org](https://support.aquasec.com/support/solutions/articles/16000120206-scanner-command-line-interface)
