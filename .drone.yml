@@ -9,17 +9,19 @@ steps:
     path: /var/run/docker.sock
   commands:
   #- sleep 5 # give docker enough time to start
-  - echo $regUser
-  - echo $${REGISTRY_PASSWORD}
   - docker ps -a
-  - docker login registry.aquasec.com -u $${regUser} -p P@ssw0rd.alto
+  - docker login registry.aquasec.com -u $${regUser} -p $${regPass}
   - docker pull registry.aquasec.com/scanner:2022.4
-  - docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H https://a23a3e4b89.cloud.aquasec.com/  -A 6f26ecbec88d8c45a244dd999a62f8c9440fad5b --local docker:dind
+  - docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $${aquaGW}  -A $${aquaToken} --local docker:dind
   environment:
     regUser:
       from_secret: regUser
-    USERNAME:
-      from_secret: username
+    regPass:
+      from_secret: regPass
+    aquaGW:
+      from_secret: aquaGW
+    aquaToken:
+      from_secret: aquaToken
 volumes:
 - name: dockersock
   host:
