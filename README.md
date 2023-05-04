@@ -36,4 +36,4 @@ example parameter for get secret variable
 ```
 
 full documentation please refer to offcial aqua docs
-[https://link-url-here.org](https://support.aquasec.com/support/solutions/articles/16000120206-scanner-command-line-interface)
+[aquasec.com](https://support.aquasec.com/support/solutions/articles/16000120206-scanner-command-line-interface)
