@@ -10,7 +10,7 @@ steps:
   commands:
   #- sleep 5 # give docker enough time to start
   - docker ps -a
-  - $${regPass} | docker login --username $${regUser} --password-stdin registry.aquasec.com
+  - echo $${regPass} | docker login --username $${regUser} --password-stdin registry.aquasec.com
   - docker pull registry.aquasec.com/scanner:2022.4
   - docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $${aquaGW}  -A $${aquaToken} --registry "hub.docker.com" nginx:latest
   environment:
