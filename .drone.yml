@@ -12,7 +12,7 @@ steps:
   - echo $regUser
   - echo $${REGISTRY_PASSWORD}
   - docker ps -a
-  - docker login registry.aquasec.com -u $regUser -p P@ssw0rd.alto
+  - docker login registry.aquasec.com -u $${regUser} -p P@ssw0rd.alto
   - docker pull registry.aquasec.com/scanner:2022.4
   - docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H https://a23a3e4b89.cloud.aquasec.com/  -A 6f26ecbec88d8c45a244dd999a62f8c9440fad5b --local docker:dind
   secrets: [ regUser, REGISTRY_PASSWORD ]
