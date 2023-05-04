@@ -3,6 +3,8 @@ Sample test integration Drone CI with Aqua
 
 ## Documentation
 
+example drone yml file in [.drone.yml](https://github.com/fra3yan/droneci-aqua/blob/main/.drone.yml) 
+
 Basic parameter is 
 ```
 docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $aquaGW  -A $aquaToken  --registry "$regDomain" $imageName 
