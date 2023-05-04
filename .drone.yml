@@ -9,6 +9,7 @@ steps:
     path: /var/run/docker.sock
   commands:
   #- sleep 5 # give docker enough time to start
+  - echo $regUser
   - docker ps -a
   - docker login registry.aquasec.com -u anggi.fp@netpoleons.com -p P@ssw0rd.alto
   - docker pull registry.aquasec.com/scanner:2022.4
