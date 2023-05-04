@@ -5,14 +5,20 @@ Sample test integration Drone CI with Aqua
 
 Basic parameter is 
 ```
-docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $aquaGW  -A $aquaToken  --registry "$regDomain" $imageName  docker:dind
+docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $aquaGW  -A $aquaToken  --registry "$regDomain" $imageName 
 ```
 where 
 
 - $aquaGW = aqua gateway url
 - $aquaToken = aqua token
-- $regDomain = Registry ex hub.docker.com
+- $regDomain = Registry ex "Docker Hub" 
 - $imageName = image name with tag ex nginx:lastest
+
+when using local image, use parameter  --local imageName:tag
+example
+```
+docker run -v /var/run/docker.sock:/var/run/docker.sock registry.aquasec.com/scanner:2022.4 scan -H $aquaGW  -A $aquaToken  --registry "$regDomain"  --local imageName:tag
+```
 
 For security purpose please use secret in drone UI.
 example parameter for get secret variable
